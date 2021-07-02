@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "HlHWsQSrXICmAn09yoVg3sUJ9hXra7FUeperaR7OW8anD0GBQlVS9PN8yQjkC2BiWTS0hYHFCtfjfsMUJr5Gaw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Francisco\\Documents\\GitHub\\PacMan\\PacMan\\PacMan.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Francisco\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.13\\microsoft.netcore.app.host.win-x64.3.1.13.nupkg.sha512"
+  ],
+  "logs": []
+}

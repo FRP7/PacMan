@@ -2,9 +2,16 @@
 
 namespace PacMan
 {
-    class Program
+    /// <summary>
+    /// Main class of the game.
+    /// </summary>
+    public class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// Play the game.
+        /// </summary>
+        /// <param name="args"> Arguments.</param>
+        public static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
         }

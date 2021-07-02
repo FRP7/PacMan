@@ -33,27 +33,17 @@ namespace PacMan.GameObjects
         {
             tiles = new List<Tile>();
 
-            // lado esquerdo
+            // vertical
             for (int i = 2; i < 25; i++)
             {
                 tiles.Add(new Tile(0, i, '|'));
-            }
-
-            // lado direito
-            for (int i = 2; i < 25; i++)
-            {
                 tiles.Add(new Tile(70, i, '|'));
             }
 
-            // lado de cima
+            // horizontal
             for (int i = 0; i < 71; i++)
             {
                 tiles.Add(new Tile(i, 1, '_'));
-            }
-
-            // lado de baixo
-            for (int i = 0; i < 71; i++)
-            {
                 tiles.Add(new Tile(i, 24, '_'));
             }
 
@@ -61,13 +51,8 @@ namespace PacMan.GameObjects
             for (int i = 7; i < 27; i++)
             {
                 tiles.Add(new Tile(i, 4, '_'));
-            }
-
-            for (int i = 7; i < 27; i++)
-            {
                 tiles.Add(new Tile(i, 5, '_'));
             }
-
             tiles.Add(new Tile(6, 5, '|'));
             tiles.Add(new Tile(27, 5, '|'));
 
@@ -75,9 +60,6 @@ namespace PacMan.GameObjects
             for (int i = 2; i < 6; i++)
             {
                 tiles.Add(new Tile(34, i, '|'));
-            }
-            for (int i = 2; i < 6; i++)
-            {
                 tiles.Add(new Tile(36, i, '|'));
             }
             tiles.Add(new Tile(35, 5, '_'));
@@ -86,9 +68,6 @@ namespace PacMan.GameObjects
             for (int i = 44; i < 63; i++)
             {
                 tiles.Add(new Tile(i, 4, '_'));
-            }
-            for (int i = 44; i < 63; i++)
-            {
                 tiles.Add(new Tile(i, 5, '_'));
             }
             tiles.Add(new Tile(43, 5, '|'));
@@ -98,9 +77,6 @@ namespace PacMan.GameObjects
             for (int i = 9; i < 21; i++)
             {
                 tiles.Add(new Tile(6, i, '|'));
-            }
-            for (int i = 9; i < 21; i++)
-            {
                 tiles.Add(new Tile(8, i, '|'));
             }
             tiles.Add(new Tile(7, 8, '_'));
@@ -114,9 +90,6 @@ namespace PacMan.GameObjects
             for (int i = 10; i < 14; i++)
             {
                 tiles.Add(new Tile(17, i, '|'));
-            }
-            for (int i = 10; i < 14; i++)
-            {
                 tiles.Add(new Tile(25, i, '|'));
             }
             for (int i = 9; i < 21; i++)
@@ -130,9 +103,6 @@ namespace PacMan.GameObjects
             for (int i = 18; i < 25; i++)
             {
                 tiles.Add(new Tile(i, 9, '_'));
-            }
-            for (int i = 18; i < 25; i++)
-            {
                 tiles.Add(new Tile(i, 13, '_'));
             }
             for (int i = 15; i < 25; i++)
@@ -149,17 +119,11 @@ namespace PacMan.GameObjects
             for (int i = 9; i < 21; i++)
             {
                 tiles.Add(new Tile(34, i, '|'));
-            }
-            for (int i = 9; i < 21; i++)
-            {
                 tiles.Add(new Tile(44, i, '|'));
             }
             for (int i = 34; i < 45; i++)
             {
                 tiles.Add(new Tile(i, 8, '_'));
-            }
-            for (int i = 34; i < 45; i++)
-            {
                 tiles.Add(new Tile(i, 20, '_'));
             }
 
@@ -167,17 +131,11 @@ namespace PacMan.GameObjects
             for (int i = 9; i < 21; i++)
             {
                 tiles.Add(new Tile(53, i, '|'));
-            }
-            for (int i = 9; i < 21; i++)
-            {
                 tiles.Add(new Tile(63, i, '|'));
             }
             for (int i = 53; i < 64; i++)
             {
                 tiles.Add(new Tile(i, 8, '_'));
-            }
-            for (int i = 53; i < 64; i++)
-            {
                 tiles.Add(new Tile(i, 20, '_'));
             }
         }

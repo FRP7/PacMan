@@ -5,9 +5,9 @@ using System.Text;
 namespace PacMan.GameLoop
 {
     /// <summary>
-    /// Keep important data and manage the game.
+    /// Control the game.
     /// </summary>
-    public static class GameManager
+    public class GameController
     {
     }
 }

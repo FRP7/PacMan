@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using PacMan.GameObjects;
 
 namespace PacMan.GameLoop
 {
@@ -15,7 +16,10 @@ namespace PacMan.GameLoop
         /// </summary>
         public void Start()
         {
-
+            foreach(GameObject item in GameData.GameObjects)
+            {
+                item.Start();
+            }
         }
     }
 }

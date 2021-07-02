@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using PacMan.GameObjects;
 
 namespace PacMan.GameLoop
 {
@@ -9,5 +10,8 @@ namespace PacMan.GameLoop
     /// </summary>
     public static class GameData
     {
+        private static GameObject[] gameObject = { new GameScene() };
+
+        public static GameObject[] GameObjects => gameObject;
     }
 }

@@ -9,5 +9,16 @@ namespace PacMan.GameLoop
     /// </summary>
     public class GameController
     {
+        private GameLoop gameLoop;
+
+        public void PlayGame()
+        {
+            gameLoop.Game();
+        }
+
+        public GameController()
+        {
+            gameLoop = new GameLoop();
+        }
     }
 }

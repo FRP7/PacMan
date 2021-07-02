@@ -29,7 +29,7 @@ namespace PacMan.GameLoop
         /// <summary>
         /// Run the game loop.
         /// </summary>
-        private void Game()
+        public void Game()
         {
             Start();
             Update();

@@ -1,4 +1,5 @@
 ﻿using System;
+using PacMan.GameLoop;
 
 namespace PacMan
 {
@@ -13,7 +14,9 @@ namespace PacMan
         /// <param name="args"> Arguments.</param>
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            GameController gameController = new GameController();
+
+            gameController.PlayGame();
         }
     }
 }

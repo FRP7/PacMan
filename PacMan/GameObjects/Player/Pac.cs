@@ -5,21 +5,21 @@ using PacMan.GameLoop;
 
 namespace PacMan.GameObjects.Player
 {
-    public class Pac : GameObject
+    public class Pac : GameObject, IPlayer
     {
-        private int playerX;
-        private int playerY;
+        public int PlayerX { get; set; }
+        public int PlayerY { get; set; }
 
-        private int oldPlayerX;
-        private int oldPlayerY;
+        public int OldPlayerX { get; set; }
+        public int OldPlayerY { get; set; }
 
-        private char sprite;
+        public char Sprite { get; set; }
 
         public override void Start()
         {
-            playerX = 3;
-            playerY = 3;
-            sprite = 'C';
+            PlayerX = 3;
+            PlayerY = 3;
+            Sprite = 'C';
         }
 
         public override void Update()
@@ -29,53 +29,53 @@ namespace PacMan.GameObjects.Player
 
         public override void Render()
         {
-            DrawPlayer();
+            RenderPlayer();
         }
 
-        private void UpdatePlayerPosition()
+        public void UpdatePlayerPosition()
         {
             if (GameData.PlayerDirection != Dir.None)
             {
-                oldPlayerX = playerX;
-                oldPlayerY = playerY;
+                OldPlayerX = PlayerX;
+                OldPlayerY = PlayerY;
 
                 switch (GameData.PlayerDirection)
                 {
                     case Dir.Up:
-                        if (playerY > 0)
+                        if (PlayerY > 0)
                         {
-                            playerY--;
+                            PlayerY--;
                             Console.Clear();
                         }
                         break;
                     case Dir.Down:
-                        playerY++;
+                        PlayerY++;
                         Console.Clear();
                         break;
                     case Dir.Left:
-                        if (playerX > 0)
+                        if (PlayerX > 0)
                         {
-                            playerX--;
+                            PlayerX--;
                             Console.Clear();
                         }
                         break;
                     case Dir.Right:
-                        playerX++;
+                        PlayerX++;
                         Console.Clear();
                         break;
                 }
                 GameData.PlayerDirection = Dir.None;
-                GameData.PlayerX = playerX;
-                GameData.PlayerY = playerY;
+                GameData.PlayerX = PlayerX;
+                GameData.PlayerY = PlayerY;
             }
         }
 
-        private void DrawPlayer()
+        public void RenderPlayer()
         {
-            Console.SetCursorPosition(oldPlayerX, oldPlayerY);
+            Console.SetCursorPosition(OldPlayerX, OldPlayerY);
             Console.Write(" ");
-            Console.SetCursorPosition(playerX, playerY);
-            Console.Write(sprite);
+            Console.SetCursorPosition(PlayerX, PlayerY);
+            Console.Write(Sprite);
         }
     }
 }

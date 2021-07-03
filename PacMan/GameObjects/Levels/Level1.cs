@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PacMan.GameObjects
 {
-    public class GameScene : GameObject
+    public class Level1 : GameObject
     {
         private List<Tile> tiles;
 

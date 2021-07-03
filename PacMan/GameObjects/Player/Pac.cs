@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using PacMan.GameLoop;
 
-namespace PacMan.GameObjects
+namespace PacMan.GameObjects.Player
 {
     public class Pac : GameObject
     {

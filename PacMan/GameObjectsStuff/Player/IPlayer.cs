@@ -43,5 +43,10 @@ namespace PacMan.GameObjectsStuff.Player
         /// Render the player.
         /// </summary>
         public void RenderPlayer();
+
+        /// <summary>
+        /// Checks whether the move is legal.
+        /// </summary>
+        public bool CheckMove(int newX, int newY);
     }
 }

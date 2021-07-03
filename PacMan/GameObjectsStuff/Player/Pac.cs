@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using PacMan.GameToolsStuff;
+using PacMan.GameObjectsStuff.Levels;
 
 namespace PacMan.GameObjectsStuff.Player
 {
@@ -77,22 +78,28 @@ namespace PacMan.GameObjectsStuff.Player
                 switch (GameData.PlayerDirection)
                 {
                     case Dir.Up:
-                        if (PlayerY > 0)
+                        if (PlayerY > 0 && CheckMove(PlayerX, PlayerY - 1))
                         {
                             PlayerY--;
                         }
                         break;
                     case Dir.Down:
-                        PlayerY++;
+                        if (CheckMove(PlayerX, PlayerY + 1))
+                        {
+                            PlayerY++;
+                        }
                         break;
                     case Dir.Left:
-                        if (PlayerX > 0)
+                        if (PlayerX > 0 && CheckMove(PlayerX - 1, PlayerY))
                         {
                             PlayerX--;
                         }
                         break;
                     case Dir.Right:
-                        PlayerX++;
+                        if (CheckMove(PlayerX + 1, PlayerY))
+                        {
+                            PlayerX++;
+                        }
                         break;
                 }
                 GameData.PlayerDirection = Dir.None;
@@ -110,6 +117,27 @@ namespace PacMan.GameObjectsStuff.Player
             Console.Write(" ");
             Console.SetCursorPosition(PlayerX, PlayerY);
             Console.Write(Sprite);
+        }
+
+        /// <summary>
+        /// Checks whether the move is legal.
+        /// </summary>
+        /// <param name="newX"> New player x coordinate.</param>
+        /// <param name="newY"> New player y coordinate.</param>
+        /// <returns></returns>
+        public bool CheckMove(int newX, int newY)
+        {
+            bool isLegal = true;
+
+            foreach (Tile tile in GameData.Level1Tiles)
+            {
+                if (tile.X == newX && tile.Y == newY)
+                {
+                    isLegal = false;
+                }
+            }
+
+            return isLegal;
         }
     }
 }

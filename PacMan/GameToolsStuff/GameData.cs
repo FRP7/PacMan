@@ -23,6 +23,11 @@ namespace PacMan.GameToolsStuff
         public static GameObject[] GameObjects => gameObject;
 
         /// <summary>
+        /// List of tiles in level 1.
+        /// </summary>
+        public static List<Tile> Level1Tiles { get; set; }
+
+        /// <summary>
         /// Player's x coordinate.
         /// </summary>
         private static int playerX;

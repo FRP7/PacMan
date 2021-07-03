@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using PacMan.GameToolsStuff;
 
 namespace PacMan.GameObjectsStuff.Levels
 {
@@ -161,6 +162,8 @@ namespace PacMan.GameObjectsStuff.Levels
                 tiles.Add(new Tile(i, 8, '_'));
                 tiles.Add(new Tile(i, 20, '_'));
             }
+
+            GameData.Level1Tiles = tiles;
         }
 
         /// <summary>

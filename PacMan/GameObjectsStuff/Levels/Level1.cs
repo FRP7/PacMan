@@ -173,7 +173,7 @@ namespace PacMan.GameObjectsStuff.Levels
         {
             // topo
             Console.SetCursorPosition(0, 0);
-            Console.Write("High Score: ");
+            Console.Write("High Score: " + GameData.Level1Score);
         }
     }
 }

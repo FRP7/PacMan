@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PacMan.GameObjectsStuff.Food
+namespace PacMan.GameObjectsStuff.Foods
 {
     /// <summary>
     /// Stats of each food.
@@ -22,7 +22,7 @@ namespace PacMan.GameObjectsStuff.Food
         /// <summary>
         /// Food sprite.
         /// </summary>
-        public char Sprite { get; }
+        public char Sprite { get; set; }
 
         /// <summary>
         /// Food constructor.

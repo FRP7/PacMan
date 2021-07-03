@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using PacMan.GameObjectsStuff;
+using PacMan.GameToolsStuff;
 
-namespace PacMan.GameObjectsStuff.Food
+namespace PacMan.GameObjectsStuff.Foods
 {
     /// <summary>
     /// Spawner of foods for pac man to eat and increase the score.
@@ -28,7 +29,7 @@ namespace PacMan.GameObjectsStuff.Food
         /// </summary>
         public override void Update()
         {
-
+            foodList = GameData.Level1Food;
         }
 
         /// <summary>
@@ -93,6 +94,8 @@ namespace PacMan.GameObjectsStuff.Food
             {
                 foodList.Add(new Food(39, i, 'o'));
             }
+
+            GameData.Level1Food = foodList;
         }
     }
 }

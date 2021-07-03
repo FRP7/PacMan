@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using PacMan.GameToolsStuff;
 using PacMan.GameObjectsStuff.Levels;
+using PacMan.GameObjectsStuff.Foods;
 
 namespace PacMan.GameObjectsStuff.Player
 {
@@ -54,6 +55,7 @@ namespace PacMan.GameObjectsStuff.Player
         public override void Update()
         {
             UpdatePlayerPosition();
+            CheckFood();
         }
 
         /// <summary>
@@ -138,6 +140,21 @@ namespace PacMan.GameObjectsStuff.Player
             }
 
             return isLegal;
+        }
+
+        /// <summary>
+        /// Checks if Pac Man eats food.
+        /// </summary>
+        public void CheckFood()
+        {
+            for(int i = 0; i < GameData.Level1Food.Count; i++)
+            {
+                if (GameData.Level1Food[i].FoodX == PlayerX && GameData.Level1Food[i].FoodY == PlayerY)
+                {
+                    GameData.Level1Food.Remove(GameData.Level1Food[i]);
+                    GameData.Level1Score += 1;
+                }
+            }
         }
     }
 }

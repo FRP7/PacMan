@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using PacMan.GameLoopStuff;
+using PacMan.GameToolsStuff;
 
 namespace PacMan.GameToolsStuff
 {
@@ -20,6 +21,7 @@ namespace PacMan.GameToolsStuff
         /// </summary>
         public void PlayGame()
         {
+            GameData.Level1Score = 0;
             gameLoop.Game();
         }
 

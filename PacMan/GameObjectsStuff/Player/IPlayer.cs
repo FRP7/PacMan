@@ -48,5 +48,10 @@ namespace PacMan.GameObjectsStuff.Player
         /// Checks whether the move is legal.
         /// </summary>
         public bool CheckMove(int newX, int newY);
+
+        /// <summary>
+        /// Checks if Pac Man eats food.
+        /// </summary>
+        public void CheckFood();
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 using PacMan.GameObjectsStuff;
 using PacMan.GameObjectsStuff.Levels;
 using PacMan.GameObjectsStuff.Player;
-using PacMan.GameObjectsStuff.Food;
+using PacMan.GameObjectsStuff.Foods;
 
 namespace PacMan.GameToolsStuff
 {
@@ -27,6 +27,11 @@ namespace PacMan.GameToolsStuff
         /// List of tiles in level 1.
         /// </summary>
         public static List<Tile> Level1Tiles { get; set; }
+
+        /// <summary>
+        /// List of food in level 1.
+        /// </summary>
+        public static List<Food> Level1Food { get; set; }
 
         /// <summary>
         /// Player's x coordinate.
@@ -60,5 +65,10 @@ namespace PacMan.GameToolsStuff
         /// Gets or sets the player's direction.
         /// </summary>
         public static Dir PlayerDirection { get; set; }
+
+        /// <summary>
+        /// The level 1 score.
+        /// </summary>
+        public static int Level1Score { get; set; }
     }
 }

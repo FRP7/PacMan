@@ -45,23 +45,19 @@ namespace PacMan.GameObjects.Player
                         if (PlayerY > 0)
                         {
                             PlayerY--;
-                            Console.Clear();
                         }
                         break;
                     case Dir.Down:
                         PlayerY++;
-                        Console.Clear();
                         break;
                     case Dir.Left:
                         if (PlayerX > 0)
                         {
                             PlayerX--;
-                            Console.Clear();
                         }
                         break;
                     case Dir.Right:
                         PlayerX++;
-                        Console.Clear();
                         break;
                 }
                 GameData.PlayerDirection = Dir.None;

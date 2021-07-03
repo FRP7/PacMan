@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using PacMan.GameObjects;
+using PacMan.GameObjectsStuff;
+using PacMan.GameToolsStuff;
 
-namespace PacMan.GameLoop
+namespace PacMan.GameLoopStuff
 {
     /// <summary>
     /// Update the game class.

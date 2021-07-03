@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PacMan.GameLoop
+namespace PacMan.GameLoopStuff
 {
     /// <summary>
     /// Manage the game loop.

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PacMan.GameObjects.Player
+namespace PacMan.GameObjectsStuff.Player
 {
     public interface IPlayer
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PacMan.GameObjects
+namespace PacMan.GameObjectsStuff.Levels
 {
     public struct Tile
     {

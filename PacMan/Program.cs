@@ -1,5 +1,5 @@
 ﻿using System;
-using PacMan.GameLoop;
+using PacMan.GameToolsStuff;
 
 namespace PacMan
 {

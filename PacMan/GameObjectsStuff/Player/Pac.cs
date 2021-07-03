@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using PacMan.GameLoop;
+using PacMan.GameToolsStuff;
 
-namespace PacMan.GameObjects.Player
+namespace PacMan.GameObjectsStuff.Player
 {
     public class Pac : GameObject, IPlayer
     {

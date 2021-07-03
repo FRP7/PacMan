@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using PacMan.GameLoopStuff;
 
-namespace PacMan.GameLoop
+namespace PacMan.GameToolsStuff
 {
     /// <summary>
     /// Control the game.

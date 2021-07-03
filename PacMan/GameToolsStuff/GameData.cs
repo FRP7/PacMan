@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using PacMan.GameObjects;
-using PacMan.GameObjects.Player;
+using PacMan.GameObjectsStuff;
+using PacMan.GameObjectsStuff.Levels;
+using PacMan.GameObjectsStuff.Player;
 
-namespace PacMan.GameLoop
+namespace PacMan.GameToolsStuff
 {
     /// <summary>
     /// Keep important data of the game.

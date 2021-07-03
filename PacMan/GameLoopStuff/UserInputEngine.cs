@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
+using PacMan.GameObjectsStuff.Player;
+using PacMan.GameToolsStuff;
 
-namespace PacMan.GameLoop
+namespace PacMan.GameLoopStuff
 {
     public class UserInputEngine
     {

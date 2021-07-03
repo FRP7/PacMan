@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PacMan.GameLoop
+namespace PacMan.GameToolsStuff
 {
     /// <summary>
     /// Class that controls the render's update.

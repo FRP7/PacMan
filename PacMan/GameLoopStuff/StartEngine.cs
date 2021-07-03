@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using PacMan.GameObjects;
+using PacMan.GameToolsStuff;
+using PacMan.GameObjectsStuff;
+using PacMan.GameObjectsStuff.Player;
+using PacMan.GameObjectsStuff.Levels;
+using PacMan.GameLoopStuff;
 
-namespace PacMan.GameLoop
+namespace PacMan.GameLoopStuff
 {
     /// <summary>
     /// Start the game.

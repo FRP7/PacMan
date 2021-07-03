@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PacMan.GameLoop
+namespace PacMan.GameObjectsStuff.Player
 {
     public enum Dir
     {

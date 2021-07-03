@@ -7,10 +7,24 @@ using PacMan.GameToolsStuff;
 
 namespace PacMan.GameLoopStuff
 {
+    /// <summary>
+    /// Detect the player's input.
+    /// </summary>
     public class UserInputEngine
     {
+        /// <summary>
+        /// Access the console key.
+        /// </summary>
         public ConsoleKey GetKey { get; private set; }
 
+        /// <summary>
+        /// Thread lock key.
+        /// </summary>
+        private object threadLock;
+
+        /// <summary>
+        /// Detect the user input in a different thread.
+        /// </summary>
         public void UserInput()
         {
             Thread inputThread = new Thread(ReadKeys);
@@ -18,35 +32,49 @@ namespace PacMan.GameLoopStuff
             inputThread.Join();
         }
 
+        /// <summary>
+        /// Read the keys.
+        /// </summary>
         private void ReadKeys()
         {
-            if (Console.KeyAvailable)
+            lock (threadLock)
             {
-                GetKey = Console.ReadKey(true).Key;
-
-                switch (GetKey)
+                if (Console.KeyAvailable)
                 {
-                    case ConsoleKey.UpArrow:
-                        GameData.PlayerDirection = Dir.Up;
-                        break;
+                    GetKey = Console.ReadKey(true).Key;
 
-                    case ConsoleKey.DownArrow:
-                        GameData.PlayerDirection = Dir.Down;
-                        break;
+                    switch (GetKey)
+                    {
+                        case ConsoleKey.UpArrow:
+                            GameData.PlayerDirection = Dir.Up;
+                            break;
 
-                    case ConsoleKey.LeftArrow:
-                        GameData.PlayerDirection = Dir.Left;
-                        break;
+                        case ConsoleKey.DownArrow:
+                            GameData.PlayerDirection = Dir.Down;
+                            break;
 
-                    case ConsoleKey.RightArrow:
-                        GameData.PlayerDirection = Dir.Right;
-                        break;
+                        case ConsoleKey.LeftArrow:
+                            GameData.PlayerDirection = Dir.Left;
+                            break;
 
-                    case ConsoleKey.Escape:
-                        // menu
-                        break;
+                        case ConsoleKey.RightArrow:
+                            GameData.PlayerDirection = Dir.Right;
+                            break;
+
+                        case ConsoleKey.Escape:
+                            // menu
+                            break;
+                    }
                 }
             }
+        }
+
+        /// <summary>
+        /// UserInputEngine constructor.
+        /// </summary>
+        public UserInputEngine()
+        {
+            threadLock = new object();
         }
     }
 }

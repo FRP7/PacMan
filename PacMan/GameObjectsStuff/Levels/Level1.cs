@@ -4,24 +4,44 @@ using System.Text;
 
 namespace PacMan.GameObjectsStuff.Levels
 {
+    /// <summary>
+    /// Level 1 gameobject.
+    /// </summary>
     public class Level1 : GameObject
     {
+        /// <summary>
+        /// List of the tiles in this level.
+        /// </summary>
         private List<Tile> tiles;
 
+        /// <summary>
+        /// To be played in the first frame of the game.
+        /// Setup stuff.
+        /// </summary>
         public override void Start()
         {
             InitializeTiles();
         }
 
+        /// <summary>
+        /// To be played in every frame.
+        /// Update the game logic, physics etc.
+        /// </summary>
         public override void Update()
         {
 
         }
 
+        /// <summary>
+        /// To be played in every frame after update.
+        /// Render the game.
+        /// </summary>
         public override void Render()
         {
+            // Render the UI.
             UI();
 
+            // Render the tiles.
             foreach (Tile item in tiles)
             {
                 Console.SetCursorPosition(item.X, item.Y);
@@ -29,6 +49,9 @@ namespace PacMan.GameObjectsStuff.Levels
             }
         }
 
+        /// <summary>
+        /// Initialize the tiles in this level.
+        /// </summary>
         private void InitializeTiles()
         {
             tiles = new List<Tile>();
@@ -140,6 +163,9 @@ namespace PacMan.GameObjectsStuff.Levels
             }
         }
 
+        /// <summary>
+        /// Render the UI.
+        /// </summary>
         private void UI()
         {
             // topo

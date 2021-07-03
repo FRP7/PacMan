@@ -13,14 +13,17 @@ namespace PacMan.GameLoopStuff
         /// Access the StartEngine class.
         /// </summary>
         private StartEngine startEngine;
+
         /// <summary>
         /// Access the UserInputEngine class.
         /// </summary>
         private UserInputEngine userInputEngine;
+
         /// <summary>
         /// Access the RenderEngine class.
         /// </summary>
         private RenderEngine renderEngine;
+
         /// <summary>
         /// Access the UpdateEngine class.
         /// </summary>

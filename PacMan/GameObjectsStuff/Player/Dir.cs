@@ -4,6 +4,9 @@ using System.Text;
 
 namespace PacMan.GameObjectsStuff.Player
 {
+    /// <summary>
+    /// All possible directions.
+    /// </summary>
     public enum Dir
     {
         Up,

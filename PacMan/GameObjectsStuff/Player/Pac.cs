@@ -5,16 +5,40 @@ using PacMan.GameToolsStuff;
 
 namespace PacMan.GameObjectsStuff.Player
 {
+    /// <summary>
+    /// Pac Man character gameobject (controller by the player).
+    /// </summary>
     public class Pac : GameObject, IPlayer
     {
+        /// <summary>
+        /// Gets or sets the Player's X coordinates.
+        /// </summary>
         public int PlayerX { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Player's Y coordinates.
+        /// </summary>
         public int PlayerY { get; set; }
 
+        /// <summary>
+        /// Gets or sets the Player's old X coordinates.
+        /// </summary>
         public int OldPlayerX { get; set; }
+
+        /// <summary>
+        /// Gets or sets the Player's old Y coordinates.
+        /// </summary>
         public int OldPlayerY { get; set; }
 
+        /// <summary>
+        /// Gets or sets the Player's sprite.
+        /// </summary>
         public char Sprite { get; set; }
 
+        /// <summary>
+        /// To be played in the first frame of the game.
+        /// Setup stuff.
+        /// </summary>
         public override void Start()
         {
             PlayerX = 3;
@@ -22,16 +46,27 @@ namespace PacMan.GameObjectsStuff.Player
             Sprite = 'C';
         }
 
+        /// <summary>
+        /// To be played in every frame.
+        /// Update the game logic, physics etc.
+        /// </summary>
         public override void Update()
         {
             UpdatePlayerPosition();
         }
 
+        /// <summary>
+        /// To be played in every frame after update.
+        /// Render the game.
+        /// </summary>
         public override void Render()
         {
             RenderPlayer();
         }
 
+        /// <summary>
+        /// Update the player current position.
+        /// </summary>
         public void UpdatePlayerPosition()
         {
             if (GameData.PlayerDirection != Dir.None)
@@ -66,6 +101,9 @@ namespace PacMan.GameObjectsStuff.Player
             }
         }
 
+        /// <summary>
+        /// Render the player.
+        /// </summary>
         public void RenderPlayer()
         {
             Console.SetCursorPosition(OldPlayerX, OldPlayerY);

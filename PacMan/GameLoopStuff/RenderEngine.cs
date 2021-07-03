@@ -21,9 +21,5 @@ namespace PacMan.GameLoopStuff
                 item.Render();
             }
         }
-
-        public RenderEngine()
-        {
-        }
     }
 }

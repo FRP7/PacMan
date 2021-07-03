@@ -42,8 +42,8 @@ namespace PacMan.GameObjectsStuff.Player
         /// </summary>
         public override void Start()
         {
-            PlayerX = 3;
-            PlayerY = 3;
+            PlayerX = 2;
+            PlayerY = 4;
             Sprite = 'C';
         }
 

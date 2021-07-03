@@ -4,6 +4,7 @@ using System.Text;
 using PacMan.GameObjectsStuff;
 using PacMan.GameObjectsStuff.Levels;
 using PacMan.GameObjectsStuff.Player;
+using PacMan.GameObjectsStuff.Food;
 
 namespace PacMan.GameToolsStuff
 {
@@ -15,7 +16,7 @@ namespace PacMan.GameToolsStuff
         /// <summary>
         /// GameObjects in the game.
         /// </summary>
-        private static GameObject[] gameObject = { new Level1(), new Pac() };
+        private static GameObject[] gameObject = { new Level1(), new Pac(), new FoodSpawner() };
 
         /// <summary>
         /// Gets the gameobjects.

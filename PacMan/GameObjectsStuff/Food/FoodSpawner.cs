@@ -61,9 +61,6 @@ namespace PacMan.GameObjectsStuff.Food
             for (int i = 6; i < 66; i += 3)
             {
                 foodList.Add(new Food(i, 7, 'o'));
-            }
-            for (int i = 6; i < 66; i += 3)
-            {
                 foodList.Add(new Food(i, 23, 'o'));
             }
 
@@ -71,6 +68,7 @@ namespace PacMan.GameObjectsStuff.Food
             for (int i = 5; i < 23; i += 2)
             {
                 foodList.Add(new Food(3, i, 'o'));
+                foodList.Add(new Food(30, i, 'o'));
             }
             for (int i = 7; i < 25; i += 2)
             {
@@ -79,22 +77,9 @@ namespace PacMan.GameObjectsStuff.Food
             for (int i = 15; i < 22; i += 2)
             {
                 foodList.Add(new Food(15, i, 'o'));
-            }
-            for (int i = 15; i < 22; i += 2)
-            {
                 foodList.Add(new Food(18, i, 'o'));
-            }
-            for (int i = 15; i < 22; i += 2)
-            {
                 foodList.Add(new Food(21, i, 'o'));
-            }
-            for (int i = 15; i < 22; i += 2)
-            {
                 foodList.Add(new Food(24, i, 'o'));
-            }
-            for (int i = 5; i < 23; i += 2)
-            {
-                foodList.Add(new Food(30, i, 'o'));
             }
             for (int i = 7; i < 25; i += 2)
             {

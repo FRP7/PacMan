@@ -10,7 +10,7 @@ namespace PacMan.GameObjectsStuff.Player
     /// <summary>
     /// Pac Man character gameobject (controller by the player).
     /// </summary>
-    public class Pac : GameObject, IPlayer
+    public class Pac : GameObject
     {
         /// <summary>
         /// Event that updates the score.
@@ -78,39 +78,39 @@ namespace PacMan.GameObjectsStuff.Player
         /// </summary>
         public void UpdatePlayerPosition()
         {
-            if (GameData.PlayerDirection != Dir.None)
+            if (GameData.PlayerDirection != PlayerDir.None)
             {
                 OldPlayerX = PlayerX;
                 OldPlayerY = PlayerY;
 
                 switch (GameData.PlayerDirection)
                 {
-                    case Dir.Up:
+                    case PlayerDir.Up:
                         if (PlayerY > 0 && CheckMove(PlayerX, PlayerY - 1))
                         {
                             PlayerY--;
                         }
                         break;
-                    case Dir.Down:
+                    case PlayerDir.Down:
                         if (CheckMove(PlayerX, PlayerY + 1))
                         {
                             PlayerY++;
                         }
                         break;
-                    case Dir.Left:
+                    case PlayerDir.Left:
                         if (PlayerX > 0 && CheckMove(PlayerX - 1, PlayerY))
                         {
                             PlayerX--;
                         }
                         break;
-                    case Dir.Right:
+                    case PlayerDir.Right:
                         if (CheckMove(PlayerX + 1, PlayerY))
                         {
                             PlayerX++;
                         }
                         break;
                 }
-                GameData.PlayerDirection = Dir.None;
+                GameData.PlayerDirection = PlayerDir.None;
                 GameData.PlayerX = PlayerX;
                 GameData.PlayerY = PlayerY;
             }

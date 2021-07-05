@@ -24,6 +24,11 @@ namespace PacMan.GameLoopStuff
             {
                 item.Start();
             }
+
+            foreach (GameObject item in GameData.Ghosts)
+            {
+                item.Start();
+            }
         }
     }
 }

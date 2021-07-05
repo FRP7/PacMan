@@ -46,19 +46,19 @@ namespace PacMan.GameLoopStuff
                     switch (GetKey)
                     {
                         case ConsoleKey.UpArrow:
-                            GameData.PlayerDirection = Dir.Up;
+                            GameData.PlayerDirection = PlayerDir.Up;
                             break;
 
                         case ConsoleKey.DownArrow:
-                            GameData.PlayerDirection = Dir.Down;
+                            GameData.PlayerDirection = PlayerDir.Down;
                             break;
 
                         case ConsoleKey.LeftArrow:
-                            GameData.PlayerDirection = Dir.Left;
+                            GameData.PlayerDirection = PlayerDir.Left;
                             break;
 
                         case ConsoleKey.RightArrow:
-                            GameData.PlayerDirection = Dir.Right;
+                            GameData.PlayerDirection = PlayerDir.Right;
                             break;
 
                         case ConsoleKey.Escape:

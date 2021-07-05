@@ -20,6 +20,11 @@ namespace PacMan.GameLoopStuff
             {
                 item.Update();
             }
+
+            foreach (GameObject item in GameData.Ghosts)
+            {
+                item.Update();
+            }
         }
     }
 }

@@ -5,14 +5,14 @@ using System.Text;
 namespace PacMan.GameObjectsStuff.Player
 {
     /// <summary>
-    /// All possible directions.
+    /// All possible player directions.
     /// </summary>
-    public enum Dir
+    public enum PlayerDir
     {
         Up,
         Down,
         Left,
         Right,
-        None
+        None,
     }
 }

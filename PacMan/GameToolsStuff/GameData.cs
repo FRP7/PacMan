@@ -5,6 +5,7 @@ using PacMan.GameObjectsStuff;
 using PacMan.GameObjectsStuff.Levels;
 using PacMan.GameObjectsStuff.Player;
 using PacMan.GameObjectsStuff.Foods;
+using PacMan.GameObjectsStuff.Ghosts;
 
 namespace PacMan.GameToolsStuff
 {
@@ -16,12 +17,23 @@ namespace PacMan.GameToolsStuff
         /// <summary>
         /// GameObjects in the game.
         /// </summary>
-        private static GameObject[] gameObject = { new Level1(), new Pac(), new FoodSpawner() };
+        private static GameObject[] gameObject = { new Level1(), new Pac(),
+            new FoodSpawner()};
+
+        /// <summary>
+        /// GameObjects in the game.
+        /// </summary>
+        private static GameObject[] ghosts = {new Ghost(39, 23)};
 
         /// <summary>
         /// Gets the gameobjects.
         /// </summary>
         public static GameObject[] GameObjects => gameObject;
+
+        /// <summary>
+        /// Gets the gameobjects.
+        /// </summary>
+        public static GameObject[] Ghosts => ghosts;
 
         /// <summary>
         /// List of tiles in level 1.
@@ -64,7 +76,7 @@ namespace PacMan.GameToolsStuff
         /// <summary>
         /// Gets or sets the player's direction.
         /// </summary>
-        public static Dir PlayerDirection { get; set; }
+        public static PlayerDir PlayerDirection { get; set; }
 
         /// <summary>
         /// The level 1 score.

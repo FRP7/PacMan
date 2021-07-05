@@ -13,6 +13,11 @@ namespace PacMan.GameObjectsStuff.Player
     public class Pac : GameObject, IPlayer
     {
         /// <summary>
+        /// Event that updates the score.
+        /// </summary>
+        public static event Action UpdateScore;
+
+        /// <summary>
         /// Gets or sets the Player's X coordinates.
         /// </summary>
         public int PlayerX { get; set; }
@@ -46,6 +51,7 @@ namespace PacMan.GameObjectsStuff.Player
             PlayerX = 2;
             PlayerY = 4;
             Sprite = 'C';
+            UpdateScore += AddScore;
         }
 
         /// <summary>
@@ -152,9 +158,17 @@ namespace PacMan.GameObjectsStuff.Player
                 if (GameData.Level1Food[i].FoodX == PlayerX && GameData.Level1Food[i].FoodY == PlayerY)
                 {
                     GameData.Level1Food.Remove(GameData.Level1Food[i]);
-                    GameData.Level1Score += 1;
+                    UpdateScore.Invoke();
                 }
             }
+        }
+
+        /// <summary>
+        /// Method that adds score.
+        /// </summary>
+        public void AddScore()
+        {
+            GameData.Level1Score += 1;
         }
     }
 }

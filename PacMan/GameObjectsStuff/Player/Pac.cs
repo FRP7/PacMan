@@ -50,9 +50,9 @@ namespace PacMan.GameObjectsStuff.Player
         public char Sprite { get; set; }
 
         /// <summary>
-        /// Access the WinMenu class.
+        /// Access the menus.
         /// </summary>
-        private EndMenu winMenu;
+        private IMenu menu;
 
         /// <summary>
         /// To be played in the first frame of the game.
@@ -65,7 +65,6 @@ namespace PacMan.GameObjectsStuff.Player
             Sprite = 'C';
             UpdateScore += AddScore;
             DeadEvent += Dead;
-            winMenu = new EndMenu();
         }
 
         /// <summary>
@@ -207,8 +206,9 @@ namespace PacMan.GameObjectsStuff.Player
         /// </summary>
         private void Dead()
         {
+            menu = new EndMenu(true);
             GameData.IsGameOver = true;
-            winMenu.RunMenu();
+            menu.RunMenu();
         }
 
         /// <summary>
@@ -218,8 +218,9 @@ namespace PacMan.GameObjectsStuff.Player
         {
             if(GameData.Level1Food.Count <= 0)
             {
+                menu = new EndMenu(false);
                 GameData.IsGameOver = true;
-                winMenu.RunMenu();
+                menu.RunMenu();
             }
         }
     }

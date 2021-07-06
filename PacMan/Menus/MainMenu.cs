@@ -5,7 +5,7 @@ using PacMan.GameToolsStuff;
 
 namespace PacMan.Menus
 {
-    public class MainMenu
+    public class MainMenu : IMenu
     {
         private GameController gameController;
 
@@ -20,45 +20,52 @@ namespace PacMan.Menus
 
             string userChoice;
 
-            Console.WriteLine("\t\t\t\t__________                    _____                 ");
-            Console.WriteLine("\t\t\t\t" + @"\______   \_____    ____     /     \ _____    ____  ");
-            Console.WriteLine("\t\t\t\t" + @" |     ___/\__  \ _/ ___\   /  \ /  \\__  \  /    \ ");
-            Console.WriteLine("\t\t\t\t" + @" |    |     / __ \\  \___  /    Y    \/ __ \|   |  \");
-            Console.WriteLine("\t\t\t\t" + @" |____|    (____  /\___  > \____|__  (____  /___|  /");
-            Console.WriteLine("\t\t\t\t" + @"                \/     \/          \/     \/     \/ ");
+            bool shut = false;
 
-            Console.WriteLine("\n\n\t\t\t\t\t\t       1) PLAY");
-            Console.WriteLine("\n\t\t\t\t\t\t    2) INSTRUTIONS");
-            Console.WriteLine("\n\t\t\t\t\t\t      3) SCORES");
-            Console.WriteLine("\n\t\t\t\t\t\t      4) CREDITS");
-            Console.WriteLine("\n\t\t\t\t\t\t       5) EXIT");
+            while (!shut)
+            {
+                Console.WriteLine("\t\t\t\t__________                    _____                 ");
+                Console.WriteLine("\t\t\t\t" + @"\______   \_____    ____     /     \ _____    ____  ");
+                Console.WriteLine("\t\t\t\t" + @" |     ___/\__  \ _/ ___\   /  \ /  \\__  \  /    \ ");
+                Console.WriteLine("\t\t\t\t" + @" |    |     / __ \\  \___  /    Y    \/ __ \|   |  \");
+                Console.WriteLine("\t\t\t\t" + @" |____|    (____  /\___  > \____|__  (____  /___|  /");
+                Console.WriteLine("\t\t\t\t" + @"                \/     \/          \/     \/     \/ ");
 
-            userChoice = Console.ReadLine();
+                Console.WriteLine("\n\n\t\t\t\t\t\t       1) PLAY");
+                Console.WriteLine("\n\t\t\t\t\t\t    2) INSTRUTIONS");
+                Console.WriteLine("\n\t\t\t\t\t\t      3) SCORES");
+                Console.WriteLine("\n\t\t\t\t\t\t      4) CREDITS");
+                Console.WriteLine("\n\t\t\t\t\t\t       5) EXIT");
 
-            if (userChoice == "1")
-            {
-                Console.Clear();
-                gameController.PlayGame();
-            }
-            else if (userChoice == "2")
-            {
-                Instructions();
-            }
-            else if (userChoice == "3")
-            {
-                Scores();
-            }
-            else if (userChoice == "4")
-            {
-                Credits();
-            }
-            else if (userChoice == "5")
-            {
-                Environment.Exit(0);
-            }
-            else
-            {
-                Console.Clear();
+                userChoice = Console.ReadLine();
+
+                if (userChoice == "1")
+                {
+                    Console.Clear();
+                    gameController.PlayGame();
+                }
+                else if (userChoice == "2")
+                {
+                    Instructions();
+                }
+                else if (userChoice == "3")
+                {
+                    Scores();
+                }
+                else if (userChoice == "4")
+                {
+                    Credits();
+                }
+                else if (userChoice == "5")
+                {
+                    //Environment.Exit(0);
+                    shut = true;
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("Try again!");
+                }
             }
         }
 
@@ -69,11 +76,11 @@ namespace PacMan.Menus
             Console.Clear();
             Console.WriteLine("Instructions page");
             Console.WriteLine("Insert instructions.");
-            Console.WriteLine("Click 1 to return.");
+            Console.WriteLine("Click anything to return.");
 
             userChoice = Console.ReadLine();
 
-            if(userChoice == "1")
+            if (userChoice != null)
             {
                 MenuOptions();
             }
@@ -90,7 +97,7 @@ namespace PacMan.Menus
 
             userChoice = Console.ReadLine();
 
-            if (userChoice == "1")
+            if (userChoice != null)
             {
                 MenuOptions();
             }
@@ -107,7 +114,7 @@ namespace PacMan.Menus
 
             userChoice = Console.ReadLine();
 
-            if (userChoice == "1")
+            if (userChoice != null)
             {
                 MenuOptions();
             }

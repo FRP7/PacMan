@@ -11,6 +11,9 @@ namespace PacMan.GameObjectsStuff.Foods
     /// </summary>
     public class FoodSpawner : GameObject
     {
+        /// <summary>
+        /// List of foods in the level.
+        /// </summary>
         private List<Food> foodList;
 
         /// <summary>

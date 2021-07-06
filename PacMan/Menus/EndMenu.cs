@@ -6,10 +6,12 @@ using PacMan.GameToolsStuff;
 
 namespace PacMan.Menus
 {
-    public class EndMenu
+    public class EndMenu : IMenu
     {
         private GameController gameController;
         private MainMenu mainMenu;
+
+        private readonly bool isLost;
 
         public void RunMenu()
         {
@@ -20,12 +22,21 @@ namespace PacMan.Menus
         {
             string userInput;
 
+            bool shut = false;
+
             Console.Clear();
-            Console.WriteLine("End game menu,");
-            Console.WriteLine("Insert text.");
-            Console.WriteLine("1) Restart the game.");
-            Console.WriteLine("2) Go to main menu.");
-            Console.WriteLine("3) Exit game.");
+
+            if (isLost)
+            {
+                Console.WriteLine("\n\n\t\t\t\t\t\t       GAME OVER!");
+            }
+            else
+            {
+                Console.WriteLine("\n\n\t\t\t\t\t\t       GAME WON!");
+            }
+            Console.WriteLine("\n\n\t\t\t\t\t\t      1) RESTART");
+            Console.WriteLine("\n\t\t\t\t\t\t      2) MAIN MENU");
+            Console.WriteLine("\n\t\t\t\t\t\t      3) EXIT");
 
             userInput = Console.ReadLine();
 
@@ -46,13 +57,15 @@ namespace PacMan.Menus
             else
             {
                 Console.Clear();
+                //Console.WriteLine("Try again!");
             }
         }
 
-        public EndMenu()
+        public EndMenu(bool lost)
         {
             gameController = new GameController();
             mainMenu = new MainMenu();
+            isLost = lost;
         }
     }
 }

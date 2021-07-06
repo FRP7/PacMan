@@ -82,7 +82,7 @@ namespace PacMan.GameObjectsStuff.Foods
         /// </summary>
         /// <param name="v1"> Food to be compared.</param>
         /// <param name="v2"> Food to be compared.</param>
-        /// <returns></returns>
+        /// <returns> Food.</returns>
         public static Food operator + (Food v1, Food v2)
         {
             return new Food((v1.FoodX + v2.FoodX), (v1.FoodY + v2.FoodY), v1.Sprite);
@@ -93,7 +93,7 @@ namespace PacMan.GameObjectsStuff.Foods
         /// </summary>
         /// <param name="v1"> Food to be compared.</param>
         /// <param name="v2"> Food to be compared.</param>
-        /// <returns></returns>
+        /// <returns> Food.</returns>
         public static Food operator - (Food v1, Food v2)
         {
             return new Food((v1.FoodX - v2.FoodX), (v1.FoodY - v2.FoodY), v1.Sprite);
@@ -104,7 +104,7 @@ namespace PacMan.GameObjectsStuff.Foods
         /// </summary>
         /// <param name="v1"> Food to be compared.</param>
         /// <param name="v2"> Food to be compared.</param>
-        /// <returns></returns>
+        /// <returns> Food.</returns>
         public static Food operator * (Food v1, Food v2)
         {
             return new Food((v1.FoodX * v2.FoodX), (v1.FoodY * v2.FoodY), v1.Sprite);
@@ -115,7 +115,7 @@ namespace PacMan.GameObjectsStuff.Foods
         /// </summary>
         /// <param name="v1"> Food to be compared.</param>
         /// <param name="v2"> Food to be compared.</param>
-        /// <returns></returns>
+        /// <returns> Food.</returns>
         public static Food operator / (Food v1, Food v2)
         {
             return new Food((v1.FoodX / v2.FoodX), (v1.FoodY / v2.FoodY), v1.Sprite);
@@ -126,7 +126,7 @@ namespace PacMan.GameObjectsStuff.Foods
         /// </summary>
         /// <param name="v1"> Food to be compared.</param>
         /// <param name="v2"> Food to be compared.</param>
-        /// <returns></returns>
+        /// <returns> Food.</returns>
         public static bool operator == (Food v1, Food v2)
         {
             if((v1.FoodX == v2.FoodX) && (v1.FoodY == v2.FoodY))
@@ -144,7 +144,7 @@ namespace PacMan.GameObjectsStuff.Foods
         /// </summary>
         /// <param name="v1"> Food to be compared.</param>
         /// <param name="v2"> Food to be compared.</param>
-        /// <returns></returns>
+        /// <returns> Food.</returns>
         public static bool operator != (Food v1, Food v2)
         {
             if ((v1.FoodX != v2.FoodX) && (v1.FoodY != v2.FoodY))
@@ -162,7 +162,7 @@ namespace PacMan.GameObjectsStuff.Foods
         /// </summary>
         /// <param name="v1"> Food to be compared.</param>
         /// <param name="v2"> Food to be compared.</param>
-        /// <returns></returns>
+        /// <returns> Food.</returns>
         public static bool operator < (Food v1, Food v2)
         {
             if ((v1.FoodX < v2.FoodX) && (v1.FoodY < v2.FoodY))
@@ -180,7 +180,7 @@ namespace PacMan.GameObjectsStuff.Foods
         /// </summary>
         /// <param name="v1"> Food to be compared.</param>
         /// <param name="v2"> Food to be compared.</param>
-        /// <returns></returns>
+        /// <returns> Food.</returns>
         public static bool operator > (Food v1, Food v2)
         {
             if ((v1.FoodX > v2.FoodX) && (v1.FoodY > v2.FoodY))
@@ -198,7 +198,7 @@ namespace PacMan.GameObjectsStuff.Foods
         /// </summary>
         /// <param name="v1"> Food to be compared.</param>
         /// <param name="v2"> Food to be compared.</param>
-        /// <returns></returns>
+        /// <returns> Food.</returns>
         public static bool operator >= (Food v1, Food v2)
         {
             if ((v1.FoodX >= v2.FoodX) && (v1.FoodY >= v2.FoodY))
@@ -212,11 +212,11 @@ namespace PacMan.GameObjectsStuff.Foods
         }
 
         /// <summary>
-        /// ">=" operator overloading.
+        /// "<=" operator overloading.
         /// </summary>
         /// <param name="v1"> Food to be compared.</param>
         /// <param name="v2"> Food to be compared.</param>
-        /// <returns></returns>
+        /// <returns> Food.</returns>
         public static bool operator <= (Food v1, Food v2)
         {
             if ((v1.FoodX <= v2.FoodX) && (v1.FoodY <= v2.FoodY))
@@ -232,7 +232,7 @@ namespace PacMan.GameObjectsStuff.Foods
         /// <summary>
         /// Convert Vector2 to Food.
         /// </summary>
-        /// <param name="input"></param>
+        /// <param name="input"> Input.</param>
         public static implicit operator Food (Vector2 input)
         {
             return new Food(Convert.ToInt32(input.X), Convert.ToInt32(input.Y), 'o');
@@ -241,7 +241,7 @@ namespace PacMan.GameObjectsStuff.Foods
         /// <summary>
         /// Convert Food to Vector2.
         /// </summary>
-        /// <param name="input"></param>
+        /// <param name="input"> Input.</param>
         public static explicit operator Vector2 (Food input)
         {
             return new Vector2(input.FoodX, input.FoodY);
@@ -258,6 +258,15 @@ namespace PacMan.GameObjectsStuff.Foods
             FoodX = foodX;
             FoodY = foodY;
             Sprite = sprite;
+        }
+
+        /// <summary>
+        /// Print the struct.
+        /// </summary>
+        /// <returns> Modified string.</returns>
+        public override string ToString()
+        {
+            return $"X: {FoodX}, Y: {FoodY}, Sprite: {Sprite}";
         }
     }
 }

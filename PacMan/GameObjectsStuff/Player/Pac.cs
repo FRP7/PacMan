@@ -4,6 +4,7 @@ using System.Text;
 using PacMan.GameToolsStuff;
 using PacMan.GameObjectsStuff.Levels;
 using PacMan.GameObjectsStuff.Foods;
+using PacMan.GameObjectsStuff.Ghosts;
 
 namespace PacMan.GameObjectsStuff.Player
 {
@@ -15,7 +16,12 @@ namespace PacMan.GameObjectsStuff.Player
         /// <summary>
         /// Event that updates the score.
         /// </summary>
-        public static event Action UpdateScore;
+        private event Action UpdateScore;
+
+        /// <summary>
+        /// Event to be called when the player dies.
+        /// </summary>
+        private event Action DeadEvent;
 
         /// <summary>
         /// Gets or sets the Player's X coordinates.
@@ -52,6 +58,7 @@ namespace PacMan.GameObjectsStuff.Player
             PlayerY = 4;
             Sprite = 'C';
             UpdateScore += AddScore;
+            DeadEvent += Dead;
         }
 
         /// <summary>
@@ -62,6 +69,7 @@ namespace PacMan.GameObjectsStuff.Player
         {
             UpdatePlayerPosition();
             CheckFood();
+            CheckGhosts();
         }
 
         /// <summary>
@@ -164,11 +172,33 @@ namespace PacMan.GameObjectsStuff.Player
         }
 
         /// <summary>
+        /// Check if Pac Man collides with a ghost.
+        /// </summary>
+        private void CheckGhosts()
+        {
+            foreach(Ghost ghost in GameData.Ghosts)
+            {
+                if(ghost.GhostX == PlayerX && ghost.GhostY == PlayerY)
+                {
+                    DeadEvent.Invoke();
+                }
+            }
+        }
+
+        /// <summary>
         /// Method that adds score.
         /// </summary>
         public void AddScore()
         {
             GameData.Level1Score += 1;
+        }
+
+        /// <summary>
+        /// Method that kills the player.
+        /// Work in progress.
+        /// </summary>
+        private void Dead()
+        {
         }
     }
 }

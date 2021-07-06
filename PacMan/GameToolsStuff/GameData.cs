@@ -82,5 +82,10 @@ namespace PacMan.GameToolsStuff
         /// The level 1 score.
         /// </summary>
         public static int Level1Score { get; set; }
+
+        /// <summary>
+        /// Gets or sets whether the game is over.
+        /// </summary>
+        public static bool IsGameOver { get; set; }
     }
 }

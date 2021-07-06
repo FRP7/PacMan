@@ -199,6 +199,7 @@ namespace PacMan.GameObjectsStuff.Player
         /// </summary>
         private void Dead()
         {
+            GameData.IsGameOver = true;
         }
     }
 }

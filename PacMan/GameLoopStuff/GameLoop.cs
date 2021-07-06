@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using PacMan.GameToolsStuff;
 
 namespace PacMan.GameLoopStuff
 {
@@ -51,7 +52,7 @@ namespace PacMan.GameLoopStuff
         /// </summary>
         private void Update()
         {
-            while(true)
+            while(!GameData.IsGameOver)
             {
                 userInputEngine.UserInput();
                 updateEngine.Update();

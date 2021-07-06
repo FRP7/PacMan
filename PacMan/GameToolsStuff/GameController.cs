@@ -22,6 +22,7 @@ namespace PacMan.GameToolsStuff
         public void PlayGame()
         {
             GameData.Level1Score = 0;
+            GameData.IsGameOver = false;
             gameLoop.Game();
         }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using PacMan.GameToolsStuff;
+using PacMan.Menus;
 
 namespace PacMan
 {
@@ -8,15 +9,17 @@ namespace PacMan
     /// </summary>
     public class Program
     {
+        private static MainMenu mainMenu;
+
         /// <summary>
         /// Play the game.
         /// </summary>
         /// <param name="args"> Arguments.</param>
         public static void Main(string[] args)
         {
-            GameController gameController = new GameController();
+            mainMenu = new MainMenu();
 
-            gameController.PlayGame();
+            mainMenu.RunMenu();
         }
     }
 }

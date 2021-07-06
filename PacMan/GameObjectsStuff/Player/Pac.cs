@@ -5,6 +5,7 @@ using PacMan.GameToolsStuff;
 using PacMan.GameObjectsStuff.Levels;
 using PacMan.GameObjectsStuff.Foods;
 using PacMan.GameObjectsStuff.Ghosts;
+using PacMan.Menus;
 
 namespace PacMan.GameObjectsStuff.Player
 {
@@ -49,6 +50,11 @@ namespace PacMan.GameObjectsStuff.Player
         public char Sprite { get; set; }
 
         /// <summary>
+        /// Access the WinMenu class.
+        /// </summary>
+        private EndMenu winMenu;
+
+        /// <summary>
         /// To be played in the first frame of the game.
         /// Setup stuff.
         /// </summary>
@@ -59,6 +65,7 @@ namespace PacMan.GameObjectsStuff.Player
             Sprite = 'C';
             UpdateScore += AddScore;
             DeadEvent += Dead;
+            winMenu = new EndMenu();
         }
 
         /// <summary>
@@ -67,6 +74,7 @@ namespace PacMan.GameObjectsStuff.Player
         /// </summary>
         public override void Update()
         {
+            CheckWin();
             UpdatePlayerPosition();
             CheckFood();
             CheckGhosts();
@@ -200,6 +208,19 @@ namespace PacMan.GameObjectsStuff.Player
         private void Dead()
         {
             GameData.IsGameOver = true;
+            winMenu.RunMenu();
+        }
+
+        /// <summary>
+        /// Check whether the player got all possible points in the level.
+        /// </summary>
+        private void CheckWin()
+        {
+            if(GameData.Level1Food.Count <= 0)
+            {
+                GameData.IsGameOver = true;
+                winMenu.RunMenu();
+            }
         }
     }
 }

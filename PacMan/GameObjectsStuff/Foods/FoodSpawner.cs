@@ -21,6 +21,9 @@ namespace PacMan.GameObjectsStuff.Foods
         {
             foodList = new List<Food>();
             SetUpFood();
+            //foodList.Add(new Food(5, 3, 'o'));
+            //foodList.Add(new Food(8, 3, 'o'));
+            //GameData.Level1Food = foodList;
         }
 
         /// <summary>
